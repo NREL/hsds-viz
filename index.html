@@ -1,0 +1,226 @@
+<html>
+<!--
+
+Hope you're having a good day :)
+
+WindViz
+  Author: Jordan Perr-Sauer - National Renewable Energy Laboratory (NREL)
+  Source: https://github.com/NREL/hsds-viz
+  Licence: BSD-3-Clause
+
+
+Licenses for Redistributed Libraries:
+
+- jquery
+Copyright JS Foundation and other contributors, https://js.foundation/
+
+This software consists of voluntary contributions made by many
+individuals. For exact contribution history, see the revision history
+available at https://github.com/jquery/jquery
+
+- jBox (GNU GPL)
+
+- Leaflet (BSD-2-Clause)
+  Copyright (c) 2010-2016, Vladimir Agafonkin
+  Copyright (c) 2010-2011, CloudMade
+  All rights reserved.
+
+- leaflet-geometryutil (BSD-3-Clause)
+  Copyright (c) 2013, Makina Corpus
+  All rights reserved.
+
+- proj4js (MIT)
+Authors:
+- Mike Adair madairATdmsolutions.ca
+- Richard Greenwood richATgreenwoodmap.com
+- Didier Richard didier.richardATign.fr
+- Stephen Irons stephen.ironsATclear.net.nz
+- Olivier Terral oterralATgmail.com
+- Calvin Metcalf cmetcalfATappgeo.com
+Copyright (c) 2014, Mike Adair, Richard Greenwood, Didier Richard, Stephen Irons, Olivier Terral and Calvin Metcalf
+
+
+- date-fns (MIT)
+  https://github.com/date-fns/date-fns/blob/master/LICENSE.md
+
+
+- d3 (BSD 3-Clause)
+Copyright 2010-2017 Mike Bostock
+All rights reserved.
+
+
+- Info Icon
+  CC Attribution 3.0 Unported (CC BY 3.0)
+  Kirill Kazachek
+  https://www.iconfinder.com/icons/1396823/circle_info_information_letter_icon#size=48
+  https://creativecommons.org/licenses/by/3.0/
+
+
+(BSD 3-Clause)
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this
+  list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+* Neither the name of the author nor the names of contributors may be used to
+  endorse or promote products derived from this software without specific prior
+  written permission.
+
+(BSD 2-Clause)
+Redistribution and use in source and binary forms, with or without modification, are
+permitted provided that the following conditions are met:
+
+   1. Redistributions of source code must retain the above copyright notice, this list of
+      conditions and the following disclaimer.
+
+   2. Redistributions in binary form must reproduce the above copyright notice, this list
+      of conditions and the following disclaimer in the documentation and/or other materials
+      provided with the distribution.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+  ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+  ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+
+<head>
+
+<script src="dist/manifest.bundle.js"></script>
+<script src="dist/map.bundle.js"></script>
+<script src="dist/page.bundle.js"></script>
+<script src="dist/app.bundle.js"></script>
+
+</head>
+<body>
+
+<div id="mapid"></div>
+
+<div id="legend" title="Legend">
+  <div id="gradient">
+    <div class="tic">10m/s</div>
+    <div class="tic">5m/s</div>
+    <div class="tic">0m/s</div>
+  </div>
+</div>
+
+<div id="tools">
+
+<div>
+<img id="info_img" title="Information" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgZGF0YS1uYW1lPSJMYXllciAxIiBpZD0iTGF5ZXJfMSIgdmlld0JveD0iMCAwIDMyIDMyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojN2RjY2ZjO308L3N0eWxlPjwvZGVmcz48dGl0bGUvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE2LDFBMTUsMTUsMCwxLDAsMzEsMTYsMTUsMTUsMCwwLDAsMTYsMVptMiwyMmEyLDIsMCwwLDEtNCwwVjE2YTIsMiwwLDAsMSw0LDBaTTE2LDEyLjE5QTIuMTksMi4xOSwwLDEsMSwxOC4xOSwxMCwyLjE5LDIuMTksMCwwLDEsMTYsMTIuMTlaIi8+PC9zdmc+" />
+<div title="Settings" id="settings_img">
+Settings
+</div>
+</div>
+
+<div class="border">
+<b>Time:</b> &nbsp;&nbsp;
+<input id="datepicker" type="text" value="1 Jan 2007">
+<select id="timepicker">
+<option value="0">12 AM</option>
+<option value="1">1 AM</option>
+<option value="2">2 AM</option>
+<option value="3">3 AM</option>
+<option value="4">4 AM</option>
+<option value="5">5 AM</option>
+<option value="6">6 AM</option>
+<option value="7">7 AM</option>
+<option value="8">8 AM</option>
+<option value="9">9 AM</option>
+<option value="10">10 AM</option>
+<option value="11">11 AM</option>
+<option value="12" selected="selected">12 PM</option>
+<option value="13">1 PM</option>
+<option value="14">2 PM</option>
+<option value="15">3 PM</option>
+<option value="16">4 PM</option>
+<option value="17">5 PM</option>
+<option value="18">6 PM</option>
+<option value="19">7 PM</option>
+<option value="20">8 PM</option>
+<option value="21">9 PM</option>
+<option value="22">10 PM</option>
+<option value="23">11 PM</option>
+</select>
+
+</div>
+
+<div class="border">
+<b>Altitude:</b> &nbsp;&nbsp;
+<select id="altitidepicker">
+<option value="10">10m</option>
+<option value="40">40m</option>
+<option value="60">60m</option>
+<option value="80">80m</option>
+<option value="100" selected="selected">100m</option>
+<option value="120">120m</option>
+<option value="140">140m</option>
+<option value="160">160m</option>
+<option value="200">200m</option>
+</select>
+
+</div>
+
+<div class="border" id="status_wrap">
+<div> <b>Status:</b> &nbsp;&nbsp; </div> <div id="status"></div>
+</div>
+
+</div>
+
+<div id="info_modal_title" class="hidden">
+  <b>WindViz Gridded Wind Toolkit Visualizer</b>
+</div>
+
+<div id="info_modal" class="hidden">
+  <div class='infomodal'><img width='300px' src='img/info.jpg' /></div>
+  <div class='infotext'>
+  This visualization shows the instantaneous wind speed at 100 meters over the continental United States using data from the <a href='https://www.nrel.gov/grid/wind-toolkit.html'>WIND Toolkit</a>. These data were generated using the WRF model by scientists at the <a href='http://nrel.gov'>National Renewable Energy Laboratory</a> to support research on development and integration of wind power into the electrical grid. The underlying dataset is more than 500TB, providing 7 years of data a 2km spatial resolution and 5 minute temporal resolution in order to support high resolution modeling of wind power production. This visualization demonstrates a public-access REST API providing access to a subset of these data with 1 hour temporal resolution and full spatial resolution for 2010 using the HDF Group's distributed cloud based service for <a href='https://github.com/HDFGroup/h5serv'>HDF5 data (HSDS)</a>.
+  <br/><br/>
+  The underlying code for this visualization is available on <a href='https://github.com/NREL/hsds-viz'>GitHub</a>. To learn how to use the data in your own research, visit the <a href='https://github.com/NREL/hsds-examples'>examples repository</a>.
+  </div>
+</div>
+
+<div id="error_modal_title" class="hidden">
+  <b>Server Error</b>
+</div>
+
+<div id="error_modal" class="hidden">
+  There was a problem getting data from the server. Please check your internet connection and reload the page.
+</div>
+
+
+<div id="settings_modal_title" class="hidden">
+  <b>Settings</b>
+</div>
+
+<div id="settings_modal" class="hidden">
+  <b>API Key:</b> <input type="text" class="api-input-text"/> <button type="submit" class="api-input-button"> Submit </button>
+</div>
+
+<div id="api_modal_title" class="hidden">
+  <b>API Key Rejected</b>
+</div>
+
+<div id="api_modal" class="hidden">
+  The API Key was rejected by the server. </br>
+  If you are using DEMO_KEY, then this message is likely due to the rate limit. </br>
+  You can obtain a new API key from <a href="https://developer.nrel.gov" target="_popup">developer.nrel.gov</a>. Please enter another NREL Developer API key and click "Submit" to continue using WindViz. </br>
+  <br/>
+  <br/>
+  <b>API Key:</b> <input type="text" class="api-input-text"/> <button type="submit" class="api-input-button"> Submit </button>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+body {
+	font-family: sans-serif;
+}
+
+.hidden {
+	display:none;
+}
+
+
+/**** LEAFLET OVERLAY ****/
+
+#mapid { width:100%; height: 100%; z-index:5; float:left;}
+
+.heatmap-overlay{
+	opacity:0.6;
+}
+
+.vector-field-overlay{
+	opacity:.5;
+}
+
+.animated-vector-field-overlay{
+	opacity:.75;
+}
+
+
+/**** LEGEND OVERLAY ****/
+
+#legend {
+	background: rgba(255, 255, 255, 0.8);;
+	position:fixed;
+	left:1em;
+	bottom:5em;
+	height:10em;
+	width:4em;
+	z-index:5;
+	border: 1px solid #ddd;
+	margin-bottom:1px;
+}
+
+
+#gradient {
+    background: linear-gradient(#081d59, #7fcdbc, #ffffd9); /* Standard syntax */
+		border:1px solid #000;
+		width:1em;
+		height:9em;
+		top:0px;
+		left:50%;
+		margin-left:-1.5em;
+		margin-top:0.5em;
+		position:absolute;
+		display:block;
+}
+
+#gradient .tic {
+	padding-bottom:6.3em;
+	margin-left:2em;
+	font-size:0.5em;
+}
+
+/**** TOOLS OVERLAY ****/
+
+#tools {
+	background: rgba(255, 255, 255, 0.8);
+	position:fixed;
+	left:1em;
+	bottom:1em;
+	height:4em;
+	width:auto;
+	min-width:57em;
+	z-index:5;
+	border: 1px solid #ddd;
+}
+
+#tools div {
+	display:block;
+	float:left;
+	height:4em;
+	padding-left:1em;
+	padding-right:1em;
+	line-height:4em;
+}
+
+#info_img{
+	padding-top:1em;
+	width:2em;
+	height:2em;
+	cursor: pointer;
+}
+
+#timeslider {
+	position:relative;
+	bottom:2px;
+}
+
+img .info{
+	width:100px;
+}
+
+.border {
+	border-left: 1px solid #ddd;
+}
+
+#status_wrap div {
+	float:left;
+	padding:0px;
+	margin:0px;
+}
+
+#status {
+	min-width:20em;
+}
+
+/*** datepicker ****/
+#datepicker{
+	width:7em;
+}
+
+/**** Info Modal CSS ****/
+.infotext {
+	font-size: 0.9em;
+	float:left;
+	padding-left:1em;
+	width:430px;
+	display:block;
+	text-align: justify;
+	text-justify: inter-word;
+	line-height:1.4em;
+}
+
+.infomodal {
+	float:left;
+	display:block;
+}
+
+
+/***** API Modal CSS *****/
+
+.api-input-text {
+	font-size:1em;
+	width:300px;
+	vertical-align: bottom;
+}
+
+.api-input-button {
+	font-size:1em;
+}
