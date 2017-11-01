@@ -3,6 +3,7 @@ import WindToolkitClient from './WTKClient';
 import DateTimeInput from './App.DateTimeInput';
 import WindVizMap from './App.WindVizMap';
 import './App.css';
+import '../fonts/icomoon.css';
 import * as modals from './App.modals';
 import * as defaults from './App.defaults';
 
@@ -114,7 +115,15 @@ class App {
     wtkClient.istart = this.limit(lower[0], 0, defaults.iMax);
     wtkClient.istop = this.limit(upper[0], 0, defaults.iMax);
 
-    // the minzoom is 4
+    // Bounding box is wonky for low zoom levels. Manually set it to full range
+    if (map.getZoom() == 4) {
+      wtkClient.jstart = 0;
+      wtkClient.jstop = defaults.jMax;
+      wtkClient.istart = 0;
+      wtkClient.istop = defaults.iMax;
+    }
+
+    // Scale skip with zoom level
     let exp = map.getZoom()-defaults.MAPINIT.minZoom;
     let skip = Math.round( defaults.maxSkip / (1.7**exp) );
     skip = skip > 0 ? skip : 1;

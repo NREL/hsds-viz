@@ -81,11 +81,21 @@ body {
 	line-height:4em;
 }
 
-#info_img{
-	padding-top:1em;
-	width:2em;
-	height:2em;
-	cursor: pointer;
+.tool-button {
+	font-size:2em;
+	cursor:pointer;
+	display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.icon-info {
+	padding-left:0.5em;
+	color: #333;
+}
+
+.icon-cog {
+	color: #333;
 }
 
 #timeslider {

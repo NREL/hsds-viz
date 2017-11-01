@@ -8,7 +8,7 @@ const LINTER = false;
 let config = module.exports = {
   entry: {
     'app': __dirname + '/src/App.js',
-    'page': ['jquery', 'd3-quadtree' , 'd3-scale', 'd3-timer', 'jBox', 'jBox/Source/jBox.css', 'date-fns/difference_in_hours', 'pikaday', 'pikaday/css/pikaday.css'],
+    'page': ['jquery', 'd3-quadtree' , 'd3-scale', 'd3-timer', 'jBox', 'jBox/Source/jBox.css', 'date-fns/difference_in_hours', 'pikaday', 'pikaday/css/pikaday.css', __dirname + '/fonts/icomoon.css'],
     'map': ['leaflet', 'proj4', 'leaflet-geometryutil', 'leaflet/dist/leaflet.css']
   },
   devtool: 'source-map',
@@ -37,6 +37,8 @@ let config = module.exports = {
         test: /\.css$/,
         use: [ 'style-loader', 'css-loader' ]
       },
+      { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
+      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" },
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.png$/, loader: 'url-loader' }

@@ -6,7 +6,7 @@ A browser-based viewer for the NREL Gridded Wind Toolkit data in an HDF5 databas
 
 ## Getting Started
 
-A [live demo](https://github.com/pages/NREL/hsds-viz/) is available through Github pages.
+A [live demo](https://github.nrel.gov/pages/wind-toolkit/windviz/) is available through Github pages.
 
 After cloning the repository, this demo can be loaded locally by opening `index.html` in a browser directly from your filesystem. No server is necessary to load the demo.
 
