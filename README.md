@@ -1,6 +1,6 @@
-# WindViz
+# WIND Toolkit Vizualization
 
-A browser-based viewer for the NREL Gridded Wind Toolkit data in an HDF5 database.
+A browser-based viewer for the NREL Gridded Wind Toolkit data in an HDF5 HSDS database.
 
 ![WindViz Screenshot](img/screenshot.jpg?raw=true)
 
