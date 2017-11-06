@@ -1,4 +1,4 @@
-# WIND Toolkit Vizualization
+# WIND Toolkit Visualization
 
 A browser-based viewer for the NREL Gridded Wind Toolkit data in an HDF5 HSDS database.
 
