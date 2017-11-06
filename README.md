@@ -27,11 +27,11 @@ WindViz is written in ES 2016 and built using babel, webpack, and npm.
 
 The development server does not overwrite any of the javascript bundles in `./dist`. To build these bundles use `npm run build`. This will overwrite all files in `./dist`.
 
-## Authors
+### Credit
 
-- Jordan Perr-Sauer
+This software was developed by Jordan Perr-Sauer (Jordan.Perr-Sauer@nrel.gov) to support the NREL Research Data Initiative and WIND Toolkit at the National Rewnable Energy Laboratory in Golden, Colorado, USA.
 
+### License
 
-## License
-
-BSD Open Source license.
+Copyright (c) 2017, National Renewable Energy Laboratory (NREL)
+All rights reserved. See LICENSE for additional information.
