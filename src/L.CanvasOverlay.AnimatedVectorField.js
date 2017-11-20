@@ -64,8 +64,9 @@ export default class AnimatedVectorField extends L.CanvasOverlay {
           // Euler integration for each particle
           for ( let k = 0; k < maxAge; k ++) {
             let closestData = this.quadtree.find(point.lat, point.lng);
-            point = L.GeometryUtil.destination(
-              point, closestData[3], closestData[2]*dt);
+            let direction = (closestData[3] + 180) % 360;
+            let distance = closestData[2]*dt
+            point = L.GeometryUtil.destination( point, direction, distance);
             points.push(canvasOverlay._map.latLngToContainerPoint(point));
           }
 
