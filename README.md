@@ -29,9 +29,4 @@ The development server does not overwrite any of the javascript bundles in `./di
 
 ### Credit
 
-This software was developed by Jordan Perr-Sauer (Jordan.Perr-Sauer@nrel.gov) to support the NREL Research Data Initiative and WIND Toolkit at the National Rewnable Energy Laboratory in Golden, Colorado, USA.
-
-### License
-
-Copyright (c) 2017, National Renewable Energy Laboratory (NREL)
-All rights reserved. See LICENSE for additional information.
+This software was developed by Jordan Perr-Sauer (Jordan.Perr-Sauer@nrel.gov) to support the NREL Research Data Initiative and WIND Toolkit at the National Rewnable Energy Laboratory in Golden, Colorado, USA. See DISCLAIMER for additional information on the terms of download and use.
