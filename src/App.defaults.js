@@ -35,6 +35,6 @@ export const wrfProjection = `+proj=lcc +lat_1=30 +lat_2=60 \
 
 
 // NREL WTK HSDS API
-export const hsdsURL = 'https://developer.nrel.gov/api/hsds/';
+export const hsdsURL = 'https://developer.nrel.gov/api/hsds';
 export const hsdsHostParam = '/nrel/wtk-us.h5';
 export const hsdsDemoKey = '3K3JQbjZmWctY0xmIfSYvYgtIcM3CN0cb1Y2w9bf';
