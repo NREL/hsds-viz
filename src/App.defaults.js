@@ -18,8 +18,8 @@ export const MAPINIT = {
   zoom: 6,
   minZoom: 4,
   maxZoom: 10,
-  tileURL: 'http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png',
-  tileAttrib: 'Map data &#169; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+  tileURL: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+  tileAttrib: 'Map layer from <a href="openstreetmap.org/copyright">OpenStreetMap</a>',
 };
 
 
